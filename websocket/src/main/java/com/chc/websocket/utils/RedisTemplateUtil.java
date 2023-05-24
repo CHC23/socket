@@ -252,5 +252,9 @@ public class RedisTemplateUtil {
     public double hashDecrement(String key, String item,double by){
         return redisTemplate.opsForHash().increment(key, item,-by);
     }
+
+    public Boolean addZset(String key,Object obj,double seqNo){
+        return redisTemplate.opsForZSet().add(key,obj,seqNo);
+    }
 }
 
